@@ -1,0 +1,40 @@
+@import "tailwindcss";
+:root {
+  color-scheme: dark;
+  --dark-bg: 8 11 18;
+  --secondary-bg: 14 20 32;
+  --card-bg: 17 24 39;
+  --primary-text: 248 250 252;
+  --secondary-text: 148 163 184;
+}
+html:not(.dark) {
+  color-scheme: light;
+  --dark-bg: 248 250 252;
+  --secondary-bg: 241 245 249;
+  --card-bg: 255 255 255;
+  --primary-text: 15 23 42;
+  --secondary-text: 71 85 105;
+}
+@layer base {
+  html { scroll-behavior: smooth; font-family: 'Inter', system-ui, -apple-system, sans-serif; }
+  body { background-color: rgb(var(--dark-bg)); color: rgb(var(--primary-text)); }
+}
+::-webkit-scrollbar { width: 8px; }
+::-webkit-scrollbar-track { background: rgb(var(--dark-bg)); }
+::-webkit-scrollbar-thumb { background: rgb(var(--secondary-bg)); border-radius: 4px; }
+::-webkit-scrollbar-thumb:hover { background: #3b82f6; }
+
+html:not(.dark) [class*="border-slate-800"],
+html:not(.dark) [class*="border-slate-700"] {
+  border-color: #e2e8f0;
+}
+html:not(.dark) [class*="bg-slate-950"],
+html:not(.dark) [class*="bg-slate-900"],
+html:not(.dark) [class*="bg-slate-800"] {
+  background-color: rgb(var(--secondary-bg));
+}
+html:not(.dark) [class*="text-slate-300"],
+html:not(.dark) [class*="text-slate-400"],
+html:not(.dark) [class*="text-slate-500"] {
+  color: rgb(var(--secondary-text));
+}

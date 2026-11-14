@@ -1,0 +1,330 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>John Rein M. Pamplona — IT Student & Aspiring Software Developer</title>
+    <meta name="description" content="Portfolio of John Rein M. Pamplona, Third-year BSIT student at City College of Calamba. Aspiring Software Developer and Network Engineer.">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        darkBg: 'rgb(var(--dark-bg) / <alpha-value>)',
+                        secondaryBg: 'rgb(var(--secondary-bg) / <alpha-value>)',
+                        cardBg: 'rgb(var(--card-bg) / <alpha-value>)',
+                        primaryAccent: '#3B82F6',
+                        secondaryAccent: '#06B6D4',
+                        highlight: '#8B5CF6',
+                        primaryText: 'rgb(var(--primary-text) / <alpha-value>)',
+                        secondaryText: 'rgb(var(--secondary-text) / <alpha-value>)'
+                    }
+                }
+            }
+        }
+    </script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animations.css">
+    <link rel="stylesheet" href="css/responsive.css">
+</head>
+<body class="bg-darkBg text-primaryText font-sans antialiased selection:bg-primaryAccent selection:text-white">
+    <div id="scroll-progress" class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primaryAccent via-secondaryAccent to-highlight z-50 transition-all duration-150"></div>
+
+    <header class="fixed top-0 left-0 w-full z-40 bg-darkBg/80 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300" id="navbar">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
+            <a href="#" class="flex items-center gap-3 group">
+                <div class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primaryAccent to-secondaryAccent flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-primaryAccent/20 group-hover:scale-105 transition-transform">
+                    JR
+                </div>
+                <div>
+                    <span class="font-bold text-lg tracking-tight bg-gradient-to-r from-white to-secondaryText bg-clip-text text-transparent">REIN.DEV</span>
+                    <span class="block text-xs text-primaryAccent font-medium">BSIT Portfolio</span>
+                </div>
+            </a>
+            <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-secondaryText">
+                <a href="#hero" class="hover:text-primaryAccent transition-colors">Home</a>
+                <a href="#about" class="hover:text-primaryAccent transition-colors">About</a>
+                <a href="#skills" class="hover:text-primaryAccent transition-colors">Skills</a>
+                <a href="#projects" class="hover:text-primaryAccent transition-colors">Projects</a>
+                <a href="#certificates" class="hover:text-primaryAccent transition-colors">Certificates</a>
+                <a href="#education" class="hover:text-primaryAccent transition-colors">Education</a>
+                <a href="#contact" class="hover:text-primaryAccent transition-colors">Contact</a>
+            </nav>
+            <div class="flex items-center gap-4">
+                <button id="theme-toggle" aria-label="Toggle Theme" class="p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent hover:border-primaryAccent/50 transition-all">
+                    <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
+                    <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
+                </button>
+                <a href="#contact" class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-medium text-sm shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-all">
+                    <span>Let's Talk</span>
+                    <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                </a>
+                <button id="mobile-menu-btn" aria-label="Open Menu" class="md:hidden p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white">
+                    <i data-lucide="menu" class="w-6 h-6"></i>
+                </button>
+            </div>
+        </div>
+        <div id="mobile-menu" class="fixed inset-x-0 top-20 bg-darkBg/95 backdrop-blur-xl border-b border-slate-800/80 px-6 py-6 flex flex-col gap-4 shadow-2xl transition-all duration-300 transform -translate-y-full opacity-0 pointer-events-none md:hidden">
+            <a href="#hero" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2 border-b border-slate-800/50">Home</a>
+            <a href="#about" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2 border-b border-slate-800/50">About</a>
+            <a href="#skills" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2 border-b border-slate-800/50">Skills</a>
+            <a href="#projects" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2 border-b border-slate-800/50">Projects</a>
+            <a href="#certificates" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2 border-b border-slate-800/50">Certificates</a>
+            <a href="#education" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2 border-b border-slate-800/50">Education</a>
+            <a href="#contact" class="mobile-link text-lg font-medium text-secondaryText hover:text-primaryAccent py-2">Contact</a>
+        </div>
+    </header>
+
+    <main class="overflow-hidden">
+        <section id="hero" class="min-h-screen pt-32 pb-20 flex items-center relative bg-gradient-to-b from-darkBg via-secondaryBg to-darkBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right">
+                        <div class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primaryAccent/10 border border-primaryAccent/20 text-primaryAccent text-xs sm:text-sm font-semibold tracking-wide">
+                            <span class="w-2 h-2 rounded-full bg-primaryAccent animate-ping"></span>
+                            Available for Opportunities & Collabs
+                        </div>
+                        <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-primaryText leading-tight">
+                            Hi, I'm <span class="bg-gradient-to-r from-primaryAccent via-secondaryAccent to-highlight bg-clip-text text-transparent">John Rein</span>
+                        </h1>
+                        <div class="text-xl sm:text-2xl font-semibold text-secondaryText h-10">
+                            <span>I am a </span><span id="typed-text" class="text-primaryAccent border-b-2 border-primaryAccent pb-1"></span>
+                        </div>
+                        <p class="text-secondaryText text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                            Third-year BSIT student at <span class="text-primaryText font-medium">City College of Calamba</span>. Passionate about building functional web applications, clean frontend interfaces, and resilient network architectures.
+                        </p>
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+                            <a href="#projects" class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-semibold shadow-lg shadow-primaryAccent/25 hover:scale-[1.02] transition-all flex items-center gap-2">
+                                <span>Explore My Work</span>
+                                <i data-lucide="chevron-right" class="w-4 h-4"></i>
+                            </a>
+                            <button id="download-resume-btn" class="px-7 py-3.5 rounded-xl bg-cardBg border border-slate-700 text-primaryText font-semibold hover:border-primaryAccent hover:text-primaryAccent transition-all flex items-center gap-2 shadow-sm">
+                                <i data-lucide="file-text" class="w-4 h-4"></i>
+                                <span>Download Resume</span>
+                            </button>
+                        </div>
+                        <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 text-secondaryText">
+                            <span class="text-xs uppercase tracking-wider font-bold text-slate-500">Connect:</span>
+                            <a href="https://www.facebook.com/pamplona.johnrein" target="_blank" rel="noopener noreferrer" class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all" aria-label="Facebook">
+                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.002 10.125 11.854v-8.385H7.078v-3.469h3.047V9.429c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.93-1.956 1.885v2.24h3.328l-.532 3.469h-2.796v8.385C19.612 23.075 24 18.092 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="mailto:johnreinpamplona12@gmail.com" class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all" aria-label="Email">
+                                <i data-lucide="mail" class="w-5 h-5"></i>
+                            </a>
+                            <a href="tel:09359386414" class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all" aria-label="Phone">
+                                <i data-lucide="phone" class="w-5 h-5"></i>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
+                        <div class="relative w-72 sm:w-80 lg:w-96 aspect-square">
+                            <div class="absolute inset-0 bg-gradient-to-tr from-primaryAccent to-highlight rounded-3xl rotate-6 opacity-30 blur-2xl"></div>
+                            <div class="relative w-full h-full rounded-3xl bg-cardBg border border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center group">
+                                <img src="assets/images/profile.png" alt="John Rein M. Pamplona" class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'">
+                                <div class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent flex flex-col justify-end p-6">
+                                    <h3 class="text-white font-bold text-lg">John Rein M. Pamplona</h3>
+                                    <p class="text-xs text-primaryAccent">Calamba City, Laguna</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="about" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Get to Know Me</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">About Me</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+                    <div class="lg:col-span-6 space-y-6 text-secondaryText text-base sm:text-lg leading-relaxed" data-aos="fade-right">
+                        <p>I am <strong class="text-primaryText font-semibold">John Rein M. Pamplona</strong>, currently a third-year Bachelor of Science in Information Technology student at <span class="text-primaryText font-medium">City College of Calamba</span>.</p>
+                        <p>My academic journey has equipped me with a solid foundation in software development principles, database management, cybersecurity fundamentals, networking fundamentals, artificial intelligence concepts, and modern web architectures.</p>
+                        <p>Beyond writing code, I enjoy designing user-friendly interfaces, solving technical problems, experimenting with new tools, and continuously improving my programming and networking abilities.</p>
+                    </div>
+                    <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
+                        <div class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative overflow-hidden">
+                            <blockquote class="relative z-10 text-slate-300 italic text-lg sm:text-xl leading-relaxed">
+                                "I believe that technology is more than just writing code. It's about transforming ideas into meaningful experiences and creating solutions that make people's lives easier."
+                            </blockquote>
+                            <div class="mt-6 flex items-center gap-4">
+                                <div class="w-12 h-12 rounded-full bg-primaryAccent/20 flex items-center justify-center text-primaryAccent font-bold">JR</div>
+                                <div>
+                                    <h4 class="text-primaryText font-bold text-sm">John Rein M. Pamplona</h4>
+                                    <p class="text-xs text-secondaryText">BSIT Student | Aspiring Developer</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="skills" class="py-24 bg-darkBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Expertise & Stack</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Technical Skills</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="flex flex-wrap items-center justify-center gap-3 mb-12" data-aos="fade-up">
+                    <button class="skill-filter-btn px-5 py-2 rounded-xl bg-primaryAccent text-white text-sm font-semibold shadow-lg shadow-primaryAccent/20 transition-all" data-filter="all">All Skills</button>
+                    <button class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all" data-filter="languages">Languages</button>
+                    <button class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all" data-filter="frontend">Frontend</button>
+                    <button class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all" data-filter="backend">Backend & DB</button>
+                    <button class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all" data-filter="tools">Tools & Networking</button>
+                </div>
+                <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
+            </div>
+        </section>
+
+        <section id="projects" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Portfolio</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Featured Projects</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div id="projects-grid" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"></div>
+            </div>
+        </section>
+
+        <section id="certificates" class="py-24 bg-darkBg">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Accreditations</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Certificates & Awards</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div id="certificates-container"></div>
+            </div>
+        </section>
+
+        <section id="education" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Academic Background</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Education & Timeline</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="max-w-3xl mx-auto">
+                    <div class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative">
+                        <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Third Year (Present)</span>
+                        <h3 class="text-2xl font-bold text-primaryText mt-1">Bachelor of Science in Information Technology</h3>
+                        <h4 class="text-lg font-medium text-secondaryText mt-1">City College of Calamba</h4>
+                        <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
+                        <p class="text-secondaryText text-sm mt-4 leading-relaxed">
+                            Focusing on advanced software development capstone projects, network engineering protocols, database administration, and modern web frameworks.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section id="contact" class="py-24 bg-cardBg/40 border-t border-slate-800/65">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
+                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Contact Me</h2>
+                    <div class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full"></div>
+                </div>
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
+                    <div class="lg:col-span-5 space-y-6">
+                        <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-primaryAccent/10 text-primaryAccent flex items-center justify-center font-bold">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-secondaryText font-medium">Email Me</span>
+                                <a href="mailto:johnreinpamplona12@gmail.com" class="block text-primaryText font-bold hover:text-primaryAccent transition-colors">johnreinpamplona12@gmail.com</a>
+                            </div>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-secondaryAccent/10 text-secondaryAccent flex items-center justify-center font-bold">
+                                <i data-lucide="phone" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-secondaryText font-medium">Call Me</span>
+                                <a href="tel:09359386414" class="block text-primaryText font-bold hover:text-primaryAccent transition-colors">09359386414</a>
+                            </div>
+                        </div>
+                        <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 flex items-center gap-4">
+                            <div class="w-12 h-12 rounded-xl bg-highlight/10 text-highlight flex items-center justify-center font-bold">
+                                <i data-lucide="map-pin" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-secondaryText font-medium">Location</span>
+                                <h4 class="text-primaryText font-bold">Calamba City, Laguna, Philippines</h4>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="lg:col-span-7">
+                        <form id="contact-form" class="p-8 rounded-3xl bg-cardBg border border-slate-800 space-y-6 shadow-xl">
+                            <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <div>
+                                    <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Your Name</label>
+                                    <input type="text" id="name" required class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent" placeholder="John Doe">
+                                </div>
+                                <div>
+                                    <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Your Email</label>
+                                    <input type="email" id="email" required class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent" placeholder="john@example.com">
+                                </div>
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Subject</label>
+                                <input type="text" id="subject" required class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent" placeholder="Project Collaboration">
+                            </div>
+                            <div>
+                                <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Message</label>
+                                <textarea id="message" rows="5" required class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent resize-none" placeholder="Write your message here..."></textarea>
+                            </div>
+                            <button type="submit" id="submit-btn" class="w-full py-4 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-bold shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                                <span>Send Message</span>
+                                <i data-lucide="send" class="w-4 h-4"></i>
+                            </button>
+                            <div id="form-feedback" class="hidden text-center text-sm font-medium p-3 rounded-xl"></div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="bg-darkBg border-t border-slate-800/80 py-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
+            <div>
+                <span class="font-bold text-primaryText tracking-tight text-lg">REIN.DEV</span>
+                <p class="text-xs text-secondaryText mt-1">© 2026 John Rein M. Pamplona. All rights reserved.</p>
+            </div>
+            <div class="flex items-center gap-4">
+                <a href="https://www.facebook.com/pamplona.johnrein" target="_blank" rel="noopener noreferrer" class="p-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent transition-all">
+                    <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                        <path d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.002 10.125 11.854v-8.385H7.078v-3.469h3.047V9.429c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.93-1.956 1.885v2.24h3.328l-.532 3.469h-2.796v8.385C19.612 23.075 24 18.092 24 12.073z"/>
+                    </svg>
+                </a>
+                <a href="mailto:johnreinpamplona12@gmail.com" class="p-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent transition-all">
+                    <i data-lucide="mail" class="w-5 h-5"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+
+    <div id="modal-container"></div>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>
+        AOS.init({ duration: 800, once: true });
+        lucide.createIcons();
+    </script>
+    <script type="module" src="js/main.js"></script>
+</body>
+</html>
