@@ -10,6 +10,30 @@ const projectsData = [
         team: ["John Rein M. Pamplona", "Elvis Joshua L. Lucio", "Eavan C. Firme"],
         liveUrl: "https://brewbound-final.vercel.app/",
         fullDetails: "BrewBound is an advanced web-based navigation and information management platform specifically tailored for coffee shops across Poblacion Barangays 1-7 in Calamba City."
+    },
+    {
+        id: "task-monitoring",
+        title: "Task Monitoring System",
+        category: "Web Development",
+        desc: "A web-based productivity application designed to efficiently track, manage, and monitor pending and completed daily tasks.",
+        image: "assets/images/taskmonitoring.png",
+        fallbackImage: "https://images.unsplash.com/photo-1507925921958-8a62f3d1a50d?q=80&w=800&auto=format&fit=crop",
+        tags: ["HTML", "CSS", "JavaScript"],
+        team: ["John Rein M. Pamplona"],
+        liveUrl: "https://junior1217.github.io/task_monitoring/",
+        fullDetails: "A clean and intuitive task management tool built with vanilla web technologies to help users organize their workflow, update task statuses in real-time, and maintain productivity through a streamlined interface."
+    },
+    {
+        id: "password-validation",
+        title: "Password Validation Tool",
+        category: "Web Development",
+        desc: "An interactive security assessment tool for sign-up forms that dynamically evaluates password strength in real-time.",
+        image: "assets/images/passvalidation.png",
+        fallbackImage: "https://images.unsplash.com/photo-1563986768609-322da13575f3?q=80&w=800&auto=format&fit=crop",
+        tags: ["HTML", "CSS", "JavaScript"],
+        team: ["John Rein M. Pamplona"],
+        liveUrl: "https://junior1217.github.io/form/",
+        fullDetails: "A robust form security component that analyzes user passwords based on strict criteria (minimum 8 characters, uppercase letters, numbers, and special characters) and dynamically categorizes strength levels from Very Weak to Very Strong to enhance account security."
     }
 ];
 
@@ -31,7 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
                     </div>
                 </div>
                 <div class="p-6 flex flex-col flex-grow">
-                    <h3 class="text-2xl font-bold text-primaryText mb-2">${project.title}</h3>
+                    <h3 class="text-2xl font-bold text-white mb-2">${project.title}</h3>
                     <p class="text-secondaryText text-sm mb-4 leading-relaxed">${project.desc}</p>
                     <div class="flex flex-wrap gap-2 mb-6">
                         ${project.tags.map(t => `<span class="px-2.5 py-1 rounded-lg bg-slate-800/80 text-slate-300 text-xs font-medium">${t}</span>`).join('')}
@@ -61,10 +85,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 const project = projectsData.find(p => p.id === id);
                 if (project && modalContainer) {
                     modalContainer.innerHTML = `
-                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkBg/80 backdrop-blur-md">
+                        <div class="fixed inset-0 z-50 flex items-center justify-center p-4 bg-darkBg/85 backdrop-blur-md">
                             <div class="relative w-full max-w-3xl rounded-3xl bg-cardBg border border-slate-800 shadow-2xl overflow-hidden max-h-[90vh] flex flex-col">
                                 <div class="p-6 border-b border-slate-800 flex items-center justify-between">
-                                    <h3 class="text-2xl font-bold text-primaryText">${project.title}</h3>
+                                    <h3 class="text-2xl font-bold text-white">${project.title}</h3>
                                     <button id="close-modal" class="p-2 rounded-xl bg-slate-800 text-secondaryText hover:text-white">
                                         <i data-lucide="x" class="w-5 h-5"></i>
                                     </button>

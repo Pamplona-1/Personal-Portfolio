@@ -5,14 +5,14 @@ const skillsData = [
     { name: "Python", category: "languages", icon: "terminal", desc: "Scripting & machine learning models" },
     { name: "PHP", category: "languages", icon: "server", desc: "Server-side web scripting" },
     { name: "JavaScript", category: "languages", icon: "file-code", desc: "Dynamic frontend & ES6+ logic" },
-    { name: "HTML5", category: "frontend", icon: "layout", desc: "Semantic markup & structure" },
-    { name: "CSS3", category: "frontend", icon: "palette", desc: "Styling, flexbox, grid & responsive design" },
+    { name: "HTML", category: "frontend", icon: "layout", desc: "Semantic markup & structure" },
+    { name: "CSS", category: "frontend", icon: "palette", desc: "Styling, flexbox, grid & responsive design" },
     { name: "Tailwind CSS", category: "frontend", icon: "wind", desc: "Utility-first rapid UI styling" },
     { name: "React", category: "frontend", icon: "layers", desc: "Component-based UI architecture" },
     { name: "Node.js", category: "backend", icon: "hexagon", desc: "Backend runtime environment" },
     { name: "MySQL", category: "backend", icon: "database", desc: "Relational database management" },
     { name: "Firebase", category: "backend", icon: "flame", desc: "Cloud database & backend services" },
-    { name: "Figma", category: "tools", icon: "figma", desc: "UI/UX wireframing & prototyping" },
+    { name: "Figma", category: "tools", icon: "pen-tool", desc: "UI/UX wireframing & prototyping" },
     { name: "VS Code", category: "tools", icon: "code-2", desc: "Primary code editor" },
     { name: "Vite", category: "tools", icon: "zap", desc: "Next-gen frontend build tool" },
     { name: "Cisco Packet Tracer", category: "tools", icon: "network", desc: "Network topologies, OSPF & VLANs" }
@@ -28,14 +28,15 @@ document.addEventListener('DOMContentLoaded', () => {
         const filtered = filter === 'all' ? skillsData : skillsData.filter(s => s.category === filter);
         filtered.forEach(skill => {
             const card = document.createElement('div');
-            card.className = 'p-6 rounded-2xl bg-cardBg border border-slate-800 hover:border-primaryAccent/50 transition-all group flex flex-col justify-between';
+            // Ginamit ang flex items-center gap-3 para magkatabi ang icon at text at maging compact sa phone at desktop views
+            card.className = 'p-4 rounded-2xl bg-cardBg border border-slate-800 hover:border-primaryAccent/50 transition-all group flex items-center gap-3.5 shadow-md';
             card.innerHTML = `
-                <div>
-                    <div class="w-12 h-12 rounded-xl bg-primaryAccent/10 text-primaryAccent flex items-center justify-center font-bold mb-4 group-hover:scale-110 transition-transform">
-                        <i data-lucide="${skill.icon}" class="w-6 h-6"></i>
-                    </div>
-                    <h3 class="text-primaryText font-bold text-lg">${skill.name}</h3>
-                    <p class="text-xs text-secondaryText mt-1 leading-relaxed">${skill.desc}</p>
+                <div class="w-10 h-10 rounded-xl bg-primaryAccent/10 text-primaryAccent flex-shrink-0 flex items-center justify-center font-bold group-hover:scale-110 transition-transform">
+                    <i data-lucide="${skill.icon}" class="w-5 h-5"></i>
+                </div>
+                <div class="min-w-0">
+                    <h3 class="text-primaryText font-bold text-base leading-tight truncate">${skill.name}</h3>
+                    <p class="text-xs text-secondaryText mt-0.5 leading-snug line-clamp-2">${skill.desc}</p>
                 </div>
             `;
             grid.appendChild(card);

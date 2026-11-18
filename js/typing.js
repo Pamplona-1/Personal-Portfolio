@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Web Developer",
         "Aspiring Network Engineer"
     ];
-    
+
     let wordIndex = 0;
     let charIndex = 0;
     let isDeleting = false;
