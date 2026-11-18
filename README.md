@@ -1,6 +1,6 @@
 # REIN.DEV – Modern Interactive IT Student Portfolio
 
-Personal portfolio website for **John Rein M. Pamplona**, Third-year BSIT student at City College of Calamba.
+My Personal portfolio website, I am **John Rein M. Pamplona**, Third-year BSIT student at City College of Calamba.
 
 ## Project Architecture
 - `index.html`: Main HTML markup structured semantically with Tailwind CSS classes.
@@ -14,7 +14,3 @@ Personal portfolio website for **John Rein M. Pamplona**, Third-year BSIT studen
 3. Install the **Live Server** extension.
 4. Right-click `index.html` and select **Open with Live Server**.
 
-## Deployment (Vercel)
-1. Push this repository to GitHub.
-2. Import project into Vercel.
-3. Deploy instantly with zero build configuration required.

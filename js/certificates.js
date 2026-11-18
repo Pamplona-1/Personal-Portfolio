@@ -25,6 +25,33 @@ const certificatesData = [
         verifyUrl: "",
         certId: "",
         desc: "Participated in the ITalks: Beyond the Screen webinar organized by the Department of Computing and Informatics at City College of Calamba."
+    },
+    {
+        title: "Microcertificate of Completion - Interpersonal Skills",
+        organization: "Wadhwani Foundation",
+        date: "November 18, 2026",
+        image: "assets/images/certificates/interpersonal-skills.png",
+        verifyUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6afdac86f0a576c777c98bb1",
+        certId: "",
+        desc: "Successfully completed 11 hours of training through self-paced online learning covering Interpersonal Skills."
+    },
+    {
+        title: "Microcertificate of Completion - Effective Speaking and Listening Skills",
+        organization: "Wadhwani Foundation",
+        date: "November 18, 2026",
+        image: "assets/images/certificates/effective-speaking.png",
+        verifyUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6afdac9df0a576c777c98bdb",
+        certId: "",
+        desc: "Successfully completed 9.75 hours of training through self-paced online learning covering Effective Speaking and Listening Skills."
+    },
+    {
+        title: "Microcertificate of Completion - Self-Management",
+        organization: "Wadhwani Foundation",
+        date: "November 18, 2026",
+        image: "assets/images/certificates/self-management.png",
+        verifyUrl: "https://web.certificate.wfglobal.org/en/certificate?certificateId=6afdacbf1eabbe677fc39e25",
+        certId: "",
+        desc: "Successfully completed 8.75 hours of training through self-paced online learning covering Self-Management."
     }
 ];
 
