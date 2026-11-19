@@ -5,7 +5,7 @@ document.addEventListener('DOMContentLoaded', () => {
         const resumeUrl = 'assets/images/resume/Resume.pdf';
         const link = document.createElement('a');
         link.href = resumeUrl;
-        link.download = 'REIN PAMPLONA Resume';
+        link.download = 'Resume';
         document.body.appendChild(link);
         link.click();
         document.body.removeChild(link);
