@@ -11,7 +11,6 @@ const skillsData = [
     { name: "React", category: "frontend", icon: "layers", desc: "Component-based UI architecture" },
     { name: "Node.js", category: "backend", icon: "hexagon", desc: "Backend runtime environment" },
     { name: "MySQL", category: "backend", icon: "database", desc: "Relational database management" },
-    { name: "Firebase", category: "backend", icon: "flame", desc: "Cloud database & backend services" },
     { name: "Figma", category: "tools", icon: "pen-tool", desc: "UI/UX wireframing & prototyping" },
     { name: "VS Code", category: "tools", icon: "code-2", desc: "Primary code editor" },
     { name: "Vite", category: "tools", icon: "zap", desc: "Next-gen frontend build tool" },
