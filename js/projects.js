@@ -34,6 +34,18 @@ const projectsData = [
         team: ["John Rein M. Pamplona"],
         liveUrl: "https://junior1217.github.io/form/",
         fullDetails: "A robust form security component that analyzes user passwords based on strict criteria (minimum 8 characters, uppercase letters, numbers, and special characters) and dynamically categorizes strength levels from Very Weak to Very Strong to enhance account security."
+    },
+    {
+        id: "escapar",
+        title: "Escapar",
+        category: "Prototype Design",
+        desc: "A prototype of mobile application ordering system",
+        image: "assets/images/escapar.png",
+        fallbackImage: "https://images.unsplash.com/photo-1581091870620-3c7e1f8b5d4e?q=80&w=800&auto=format&fit=crop",
+        tags: ["Figma", "UI/UX Design"],
+        team: ["James Mathew Castillo", "Reynalyn Cornelio", "John Rein Pamplona", "Gellian Mae Ronquillo", "Mariella Taming", "Derick Tresvalles"],
+        liveUrl: "https://tinyurl.com/escapar-shop",
+        fullDetails: "Escapar is a mobile application prototype designed to streamline the ordering process for users, providing an intuitive interface for browsing products, customizing orders, and completing transactions efficiently. The design focuses on user experience, ensuring ease of navigation and accessibility."
     }
 ];
 

@@ -1,10 +1,121 @@
 @keyframes float {
-  0%, 100% { transform: translateY(0px); }
-  50% { transform: translateY(-10px); }
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
 }
-.floating-element { animation: float 6s ease-in-out infinite; }
+
+.floating-element {
+  animation: float 6s ease-in-out infinite;
+}
+
 @keyframes fadeInUp {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
-.fade-in-up { animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards; }
+
+.fade-in-up {
+  animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes auroraFloatA {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(45px, -30px) scale(1.08);
+  }
+
+  100% {
+    transform: translate(-25px, 35px) scale(0.96);
+  }
+}
+
+@keyframes auroraFloatB {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(-50px, 25px) scale(1.1);
+  }
+
+  100% {
+    transform: translate(30px, -35px) scale(0.95);
+  }
+}
+
+@keyframes auroraFloatC {
+  0% {
+    transform: translate(0px, 0px) scale(1);
+  }
+
+  50% {
+    transform: translate(35px, 30px) scale(1.06);
+  }
+
+  100% {
+    transform: translate(-40px, -20px) scale(0.98);
+  }
+}
+
+/* Music Equalizer Bars */
+.eq-bar {
+  width: 3px;
+  height: 30%;
+  border-radius: 9999px;
+  background: linear-gradient(to top, #3b82f6, #06b6d4);
+  transition: height 0.2s ease;
+}
+
+.music-eq.is-playing .eq-bar {
+  animation: eqBounce 0.75s ease-in-out infinite alternate;
+}
+
+.music-eq.is-playing .eq-bar:nth-child(2) {
+  animation-delay: 0.18s;
+}
+
+.music-eq.is-playing .eq-bar:nth-child(3) {
+  animation-delay: 0.36s;
+}
+
+.music-eq.is-playing .eq-bar:nth-child(4) {
+  animation-delay: 0.12s;
+}
+
+@keyframes eqBounce {
+  0% {
+    height: 22%;
+  }
+
+  50% {
+    height: 100%;
+  }
+
+  100% {
+    height: 42%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  .floating-element,
+  .aurora-blob,
+  .eq-bar {
+    animation: none !important;
+  }
+}

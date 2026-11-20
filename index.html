@@ -4,15 +4,24 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>John Rein M. Pamplona — IT Student & Aspiring Software Developer</title>
+    <title>John Rein M. Pamplona | Personal Portfolio</title>
     <meta name="description"
         content="Portfolio of John Rein M. Pamplona, Third-year BSIT student at City College of Calamba. Aspiring Software Developer and Network Engineer.">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Plus+Jakarta+Sans:wght@600;700;800&display=swap"
+        rel="stylesheet">
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
             darkMode: 'class',
             theme: {
                 extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', '-apple-system', 'sans-serif'],
+                        display: ['Plus Jakarta Sans', 'Inter', 'sans-serif']
+                    },
                     colors: {
                         darkBg: 'rgb(var(--dark-bg) / <alpha-value>)',
                         secondaryBg: 'rgb(var(--secondary-bg) / <alpha-value>)',
@@ -34,23 +43,37 @@
     <link rel="stylesheet" href="css/responsive.css">
 </head>
 
-<body class="bg-darkBg text-primaryText font-sans antialiased selection:bg-primaryAccent selection:text-white">
+<body class="bg-darkBg text-primaryText font-sans antialiased selection:bg-primaryAccent selection:text-white relative">
+    <!-- Background Audio Element (Looped, Manual Play Only) -->
+    <audio id="bg-music" src="assets/akoangbagyo.mp3" loop preload="auto"></audio>
+
+    <!-- Modern Aurora & Dot-Matrix Background System -->
+    <div class="modern-bg-system fixed inset-0 pointer-events-none z-0 overflow-hidden" aria-hidden="true">
+        <div class="aurora-layer">
+            <div class="aurora-blob blob-blue"></div>
+            <div class="aurora-blob blob-cyan"></div>
+            <div class="aurora-blob blob-violet"></div>
+        </div>
+        <div class="dot-matrix"></div>
+        <div class="vignette-overlay"></div>
+    </div>
+
     <div id="scroll-progress"
         class="fixed top-0 left-0 h-1 bg-gradient-to-r from-primaryAccent via-secondaryAccent to-highlight z-50 transition-all duration-150">
     </div>
 
     <header
-        class="fixed top-0 left-0 w-full z-40 bg-darkBg/80 backdrop-blur-md border-b border-slate-800/60 transition-all duration-300"
+        class="fixed top-0 left-0 w-full z-40 bg-darkBg/75 backdrop-blur-xl border-b border-slate-800/60 transition-all duration-300"
         id="navbar">
         <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-20 flex items-center justify-between">
             <a href="#" class="flex items-center gap-3 group">
                 <div
-                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primaryAccent to-secondaryAccent flex items-center justify-center font-bold text-white text-lg shadow-lg shadow-primaryAccent/20 group-hover:scale-105 transition-transform">
+                    class="w-10 h-10 rounded-xl bg-gradient-to-tr from-primaryAccent via-secondaryAccent to-highlight flex items-center justify-center font-display font-bold text-white text-lg shadow-lg shadow-primaryAccent/25 group-hover:scale-105 transition-transform">
                     JR
                 </div>
                 <div>
                     <span
-                        class="font-bold text-lg tracking-tight bg-gradient-to-r from-white to-secondaryText bg-clip-text text-transparent">HELLO.REIN</span>
+                        class="font-display font-bold text-lg tracking-tight bg-gradient-to-r from-white to-secondaryText bg-clip-text text-transparent">HELLO.REIN</span>
                     <span class="block text-xs text-primaryAccent font-medium">Personal Portfolio</span>
                 </div>
             </a>
@@ -65,17 +88,17 @@
             </nav>
             <div class="flex items-center gap-4">
                 <button id="theme-toggle" aria-label="Toggle Theme"
-                    class="p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent hover:border-primaryAccent/50 transition-all">
+                    class="p-2.5 rounded-xl bg-cardBg/80 backdrop-blur-md border border-slate-800 text-secondaryText hover:text-primaryAccent hover:border-primaryAccent/50 transition-colors">
                     <i data-lucide="sun" class="w-5 h-5 hidden dark:block"></i>
                     <i data-lucide="moon" class="w-5 h-5 block dark:hidden"></i>
                 </button>
                 <a href="#contact"
-                    class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-medium text-sm shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-all">
+                    class="hidden sm:inline-flex items-center gap-2 px-5 py-2.5 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-medium text-sm shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-opacity">
                     <span>Let's Talk</span>
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
                 <button id="mobile-menu-btn" aria-label="Open Menu"
-                    class="md:hidden p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white">
+                    class="md:hidden p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white transition-colors">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -99,68 +122,135 @@
         </div>
     </header>
 
-    <main class="overflow-hidden">
-        <section id="hero"
-            class="min-h-screen pt-32 pb-20 flex items-center relative bg-gradient-to-b from-darkBg via-secondaryBg to-darkBg">
+    <main class="overflow-hidden relative z-10">
+        <section id="hero" class="min-h-screen pt-24 lg:pt-28 pb-14 flex items-center relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
-                <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-                    <div class="lg:col-span-7 space-y-6 text-center lg:text-left" data-aos="fade-right">
+                <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
+                    <div class="lg:col-span-7 space-y-4 text-center lg:text-left" data-aos="fade-right">
                         <div
-                            class="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-primaryAccent/10 border border-primaryAccent/20 text-primaryAccent text-xs sm:text-sm font-semibold tracking-wide">
-                            <span class="w-2 h-2 rounded-full bg-primaryAccent animate-ping"></span>
+                            class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cardBg/80 backdrop-blur-md border border-primaryAccent/25 text-primaryAccent text-xs font-semibold tracking-wide shadow-lg shadow-primaryAccent/5">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
                             Available for Opportunities & Collabs
                         </div>
                         <h1
-                            class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-primaryText leading-tight">
+                            class="font-display text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight text-primaryText leading-tight">
                             Hi, I'm <span
                                 class="bg-gradient-to-r from-primaryAccent via-secondaryAccent to-highlight bg-clip-text text-transparent">Rein!</span>
                         </h1>
-                        <div class="text-xl sm:text-2xl font-semibold text-secondaryText h-10">
-                            <span>I am a </span><span id="typed-text"
-                                class="text-primaryAccent border-b-2 border-primaryAccent pb-1"></span>
+                        <div
+                            class="text-lg sm:text-2xl font-semibold text-secondaryText h-8 flex items-center justify-center lg:justify-start">
+                            <span>I am a&nbsp;</span><span id="typed-text"
+                                class="text-primaryAccent border-b-2 border-primaryAccent pb-0.5"></span>
                         </div>
-                        <p class="text-secondaryText text-base sm:text-lg max-w-2xl mx-auto lg:mx-0 leading-relaxed">
+                        <p class="text-secondaryText text-sm sm:text-base max-w-2xl mx-auto lg:mx-0 leading-relaxed">
                             Third-year BSIT student at <span class="text-primaryText font-medium">City College of
                                 Calamba</span>. Passionate about building functional web applications, clean frontend
                             interfaces, and resilient network architectures.
                         </p>
-                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-4 pt-4">
+
+                        <!-- Fully Responsive Home Music Card ("Ako ang bagyoo!!!") -->
+                        <div
+                            class="spotlight-card w-full max-w-lg mx-auto lg:mx-0 p-3.5 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800/90 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
+                            <!-- Top Row on Mobile / Left Side on Desktop -->
+                            <div class="flex items-center justify-between gap-3 min-w-0 flex-1">
+                                <div class="flex items-center gap-3 min-w-0">
+                                    <button type="button" data-music-toggle aria-label="Play or Pause Background Music"
+                                        class="music-toggle-btn w-11 h-11 sm:w-10 sm:h-10 rounded-xl bg-gradient-to-tr from-primaryAccent to-secondaryAccent text-white flex items-center justify-center shrink-0 shadow-md shadow-primaryAccent/25 hover:opacity-95 active:scale-95 transition-all">
+                                        <i data-lucide="play" class="w-5 h-5 sm:w-4 sm:h-4 icon-play"></i>
+                                        <i data-lucide="square" class="w-4 h-4 sm:w-3.5 sm:h-3.5 icon-stop hidden"></i>
+                                    </button>
+                                    <div class="min-w-0 text-left">
+                                        <div class="flex items-center gap-1.5 flex-wrap">
+                                            <span
+                                                class="text-[10px] font-bold uppercase tracking-wider text-secondaryAccent">Top
+                                                of my Playlist</span>
+                                            <span
+                                                class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primaryAccent/15 text-primaryAccent text-[10px] font-semibold">
+                                                <i data-lucide="repeat" class="w-2.5 h-2.5"></i> Loop
+                                            </span>
+                                        </div>
+                                        <p
+                                            class="font-display font-bold text-sm sm:text-base text-primaryText truncate">
+                                            Ako ang bagyoo!!!
+                                        </p>
+                                        <p class="music-status-text text-[11px] text-secondaryText truncate">
+                                            Paused • Click play to listen
+                                        </p>
+                                    </div>
+                                </div>
+
+                                <!-- Mobile Equalizer (shows on right of title on mobile) -->
+                                <div class="music-eq flex sm:hidden items-end gap-1 h-5 pr-1 shrink-0"
+                                    aria-hidden="true">
+                                    <span class="eq-bar"></span>
+                                    <span class="eq-bar"></span>
+                                    <span class="eq-bar"></span>
+                                    <span class="eq-bar"></span>
+                                </div>
+                            </div>
+
+                            <!-- Bottom Row on Mobile (Full Width Slider) / Right Side on Desktop -->
+                            <div
+                                class="flex items-center gap-2.5 pt-2.5 sm:pt-0 border-t border-slate-800/70 sm:border-t-0 w-full sm:w-auto shrink-0">
+                                <button type="button" id="music-mute-btn" aria-label="Mute or Unmute Music"
+                                    class="p-2 sm:p-1.5 rounded-lg bg-darkBg/80 border border-slate-800 text-secondaryText hover:text-primaryAccent transition-colors shrink-0">
+                                    <i data-lucide="volume-2" class="w-4 h-4 sm:w-3.5 sm:h-3.5 icon-vol-on"></i>
+                                    <i data-lucide="volume-x"
+                                        class="w-4 h-4 sm:w-3.5 sm:h-3.5 icon-vol-off hidden text-rose-400"></i>
+                                </button>
+                                <input id="music-volume-slider" type="range" min="0" max="100" value="15"
+                                    aria-label="Adjust Music Volume" class="music-range flex-1 sm:w-24 cursor-pointer">
+                                <span id="music-volume-label"
+                                    class="text-xs sm:text-[11px] font-semibold text-secondaryText w-9 text-right tabular-nums shrink-0">15%</span>
+                                <!-- Desktop Equalizer -->
+                                <div class="music-eq hidden sm:flex items-end gap-1 h-4 pr-1 shrink-0"
+                                    aria-hidden="true">
+                                    <span class="eq-bar"></span>
+                                    <span class="eq-bar"></span>
+                                    <span class="eq-bar"></span>
+                                    <span class="eq-bar"></span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="flex flex-wrap items-center justify-center lg:justify-start gap-3.5 pt-1">
                             <a href="#projects"
-                                class="px-7 py-3.5 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-semibold shadow-lg shadow-primaryAccent/25 hover:scale-[1.02] transition-all flex items-center gap-2">
+                                class="px-6 py-3 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-semibold text-sm shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-opacity flex items-center gap-2">
                                 <span>Explore My Work</span>
                                 <i data-lucide="chevron-right" class="w-4 h-4"></i>
                             </a>
                             <button id="download-resume-btn"
-                                class="px-7 py-3.5 rounded-xl bg-cardBg border border-slate-700 text-primaryText font-semibold hover:border-primaryAccent hover:text-primaryAccent transition-all flex items-center gap-2 shadow-sm">
+                                class="px-6 py-3 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-700/80 text-primaryText font-semibold text-sm hover:border-primaryAccent hover:text-primaryAccent transition-colors flex items-center gap-2 shadow-sm">
                                 <i data-lucide="file-text" class="w-4 h-4"></i>
                                 <span>Download Resume</span>
                             </button>
                         </div>
-                        <div class="flex items-center justify-center lg:justify-start gap-4 pt-4 text-secondaryText">
+
+                        <div class="flex items-center justify-center lg:justify-start gap-3 pt-1 text-secondaryText">
                             <span class="text-xs uppercase tracking-wider font-bold text-slate-500">Connect:</span>
                             <a href="https://www.facebook.com/pamplona.johnrein" target="_blank"
                                 rel="noopener noreferrer"
-                                class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all"
+                                class="p-2 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-colors"
                                 aria-label="Facebook">
-                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path
                                         d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.002 10.125 11.854v-8.385H7.078v-3.469h3.047V9.429c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.93-1.956 1.885v2.24h3.328l-.532 3.469h-2.796v8.385C19.612 23.075 24 18.092 24 12.073z" />
                                 </svg>
                             </a>
                             <a href="mailto:johnreinpamplona12@gmail.com"
-                                class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all"
+                                class="p-2 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-colors"
                                 aria-label="Email">
-                                <i data-lucide="mail" class="w-5 h-5"></i>
+                                <i data-lucide="mail" class="w-4 h-4"></i>
                             </a>
                             <a href="tel:09359386414"
-                                class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all"
+                                class="p-2 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-colors"
                                 aria-label="Phone">
-                                <i data-lucide="phone" class="w-5 h-5"></i>
+                                <i data-lucide="phone" class="w-4 h-4"></i>
                             </a>
-                            <a href="https://github.com/Pamplona-1"
-                                class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all"
+                            <a href="https://github.com/Pamplona-1" target="_blank" rel="noopener noreferrer"
+                                class="p-2 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-colors"
                                 aria-label="Github">
-                                <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                                     <path fill-rule="evenodd" clip-rule="evenodd"
                                         d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                                 </svg>
@@ -168,20 +258,24 @@
                         </div>
                     </div>
                     <div class="lg:col-span-5 flex justify-center" data-aos="fade-left">
-                        <div class="relative w-72 sm:w-80 lg:w-96 aspect-square">
+                        <div class="relative w-72 sm:w-80 lg:w-96 aspect-square floating-element">
                             <div
-                                class="absolute inset-0 bg-gradient-to-tr from-primaryAccent to-highlight rounded-3xl rotate-6 opacity-30 blur-2xl">
+                                class="absolute -inset-1 bg-gradient-to-tr from-primaryAccent via-secondaryAccent to-highlight rounded-3xl opacity-35 blur-2xl">
                             </div>
                             <div
-                                class="relative w-full h-full rounded-3xl bg-cardBg border border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center group">
+                                class="spotlight-card relative w-full h-full rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 overflow-hidden shadow-2xl flex items-center justify-center group">
                                 <img src="assets/images/profiles.png" alt="John Rein M. Pamplona"
-                                    class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 absolute inset-x-0 bottom-0 h-28 bg-gradient-to-t from-slate-950/90 via-slate-900/50 to-transparent pointer-events-none"
+                                    class="w-full h-full object-cover object-center scale-105 -translate-y-1 group-hover:scale-110 transition-transform duration-500"
                                     onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'">
                                 <div
-                                    class="absolute inset-0 bg-gradient-to-t from-darkBg/90 via-transparent to-transparent flex flex-col justify-end p-6">
-                                    <h3 class="text-white font-bold text-lg" pointer-events-none>John Rein M. Pamplona
-                                    </h3>
-                                    <p class="text-xs text-primaryAccent" pointer-events-none>Calamba City, Laguna</p>
+                                    class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-darkBg/95 via-darkBg/50 to-transparent flex flex-col justify-end p-5 pointer-events-none">
+                                    <span
+                                        class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-secondaryAccent mb-0.5">
+                                        <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> BSIT • CCC
+                                    </span>
+                                    <h3 class="text-white font-display font-bold text-lg leading-tight">John Rein M.
+                                        Pamplona</h3>
+                                    <p class="text-xs text-slate-300">Calamba City, Laguna</p>
                                 </div>
                             </div>
                         </div>
@@ -190,12 +284,12 @@
             </div>
         </section>
 
-        <section id="about" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
+        <section id="about" class="py-24 bg-cardBg/30 backdrop-blur-sm border-y border-slate-800/60">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Get to Know
                         Me</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">About Me</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">About Me</h2>
                     <div
                         class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
                     </div>
@@ -215,12 +309,12 @@
                     </div>
                     <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
                         <div
-                            class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative overflow-hidden">
+                            class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative overflow-hidden">
                             <blockquote class="relative z-10 text-slate-300 italic text-lg sm:text-xl leading-relaxed">
                                 "I believe that technology is more than just writing code. It's about transforming ideas
                                 into meaningful experiences and creating solutions that make people's lives easier."
                             </blockquote>
-                            <div class="mt-6 flex items-center gap-4">
+                            <div class="mt-6 flex items-center gap-4 relative z-10">
                                 <div
                                     class="w-12 h-12 rounded-full bg-primaryAccent/20 flex items-center justify-center text-primaryAccent font-bold">
                                     JR</div>
@@ -235,12 +329,12 @@
             </div>
         </section>
 
-        <section id="skills" class="py-24 bg-darkBg">
+        <section id="skills" class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Expertise &
                         Stack</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Technical Skills</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">Technical Skills</h2>
                     <div
                         class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
                     </div>
@@ -250,27 +344,27 @@
                         class="skill-filter-btn px-5 py-2 rounded-xl bg-primaryAccent text-white text-sm font-semibold shadow-lg shadow-primaryAccent/20 transition-all"
                         data-filter="all">All Skills</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
                         data-filter="languages">Languages</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
                         data-filter="frontend">Frontend</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
                         data-filter="backend">Backend & DB</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
                         data-filter="tools">Tools & Networking</button>
                 </div>
                 <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
             </div>
         </section>
 
-        <section id="projects" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
+        <section id="projects" class="py-24 bg-cardBg/30 backdrop-blur-sm border-y border-slate-800/60">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Portfolio</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Featured Projects</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">Featured Projects</h2>
                     <div
                         class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
                     </div>
@@ -279,12 +373,13 @@
             </div>
         </section>
 
-        <section id="certificates" class="py-24 bg-darkBg">
+        <section id="certificates" class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span
                         class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Accreditations</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Certificates & Awards</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">Certificates & Awards
+                    </h2>
                     <div
                         class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
                     </div>
@@ -293,80 +388,86 @@
             </div>
         </section>
 
-        <section id="education" class="py-24 bg-cardBg/40 border-y border-slate-800/60">
+        <section id="education" class="py-24 bg-cardBg/30 backdrop-blur-sm border-y border-slate-800/60">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Academic
                         Background</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Education</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">Education</h2>
                     <div
                         class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
                     </div>
                 </div>
                 <div class="max-w-3xl mx-auto">
-                    <div class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative">
+                    <div
+                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative">
                         <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">College
                             (3rd Year - Present)</span>
-                        <h3 class="text-2xl font-bold text-primaryText mt-1">City College of Calamba</h3>
+                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">City College of Calamba</h3>
                         <h4 class="text-lg font-medium text-secondaryText mt-1">Bachelor of Science in Information
                             Technology</h4>
                         <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
-                        </p>
                     </div>
 
-                    <div class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative mt-8">
+                    <div
+                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative mt-8">
                         <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Senior High
                             School (2022 - 2024)</span>
-                        <h3 class="text-2xl font-bold text-primaryText mt-1">Saint Benilde International School</h3>
+                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">Saint Benilde International
+                            School</h3>
                         <h4 class="text-lg font-medium text-secondaryText mt-1">Accountancy and Business Management
                             Strand</h4>
                         <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
                     </div>
 
-                    <div class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative mt-8">
+                    <div
+                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative mt-8">
                         <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Junior High
                             School (2018 - 2022)</span>
-                        <h3 class="text-2xl font-bold text-primaryText mt-1">Maranatha Christian Academy</h3>
+                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">Maranatha Christian Academy
+                        </h3>
                         <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
                     </div>
 
-                    <div class="p-8 rounded-3xl bg-cardBg border border-slate-800 shadow-xl relative mt-8">
+                    <div
+                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative mt-8">
                         <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Elementary
                             School (2012 - 2018)</span>
-                        <h3 class="text-2xl font-bold text-primaryText mt-1">La Mesa Elementary School</h3>
+                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">La Mesa Elementary School</h3>
                         <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
-
-
                     </div>
                 </div>
+            </div>
         </section>
 
-        <section id="contact" class="py-24 bg-cardBg/40 border-t border-slate-800/65">
+        <section id="contact" class="py-24">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
                 <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
                     <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Get In Touch</span>
-                    <h2 class="text-3xl sm:text-4xl font-bold text-primaryText mt-2">Contact Me</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">Contact Me</h2>
                     <div
                         class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
                     </div>
                 </div>
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12">
                     <div class="lg:col-span-5 space-y-6">
-                        <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 flex items-center gap-4">
+                        <div
+                            class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 flex items-center gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-primaryAccent/10 text-primaryAccent flex items-center justify-center font-bold">
+                                class="w-12 h-12 rounded-xl bg-primaryAccent/10 text-primaryAccent flex items-center justify-center font-bold shrink-0">
                                 <i data-lucide="mail" class="w-6 h-6"></i>
                             </div>
-                            <div>
+                            <div class="min-w-0">
                                 <span class="text-xs text-secondaryText font-medium">Email Me</span>
                                 <a href="mailto:johnreinpamplona12@gmail.com"
-                                    class="block text-primaryText font-bold hover:text-primaryAccent transition-colors">johnreinpamplona12@gmail.com</a>
+                                    class="block text-primaryText font-bold hover:text-primaryAccent transition-colors truncate">johnreinpamplona12@gmail.com</a>
                             </div>
                         </div>
 
-                        <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 flex items-center gap-4">
+                        <div
+                            class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 flex items-center gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-secondaryAccent/10 text-secondaryAccent flex items-center justify-center font-bold">
+                                class="w-12 h-12 rounded-xl bg-secondaryAccent/10 text-secondaryAccent flex items-center justify-center font-bold shrink-0">
                                 <i data-lucide="phone" class="w-6 h-6"></i>
                             </div>
                             <div>
@@ -376,9 +477,10 @@
                             </div>
                         </div>
 
-                        <div class="p-6 rounded-2xl bg-cardBg border border-slate-800 flex items-center gap-4">
+                        <div
+                            class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 flex items-center gap-4">
                             <div
-                                class="w-12 h-12 rounded-xl bg-highlight/10 text-highlight flex items-center justify-center font-bold">
+                                class="w-12 h-12 rounded-xl bg-highlight/10 text-highlight flex items-center justify-center font-bold shrink-0">
                                 <i data-lucide="map-pin" class="w-6 h-6"></i>
                             </div>
                             <div>
@@ -389,20 +491,20 @@
                     </div>
                     <div class="lg:col-span-7">
                         <form id="contact-form" action="https://formspree.io/f/xbgoobpw" method="POST"
-                            class="p-8 rounded-3xl bg-cardBg border border-slate-800 space-y-6 shadow-xl">
+                            class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 space-y-6 shadow-xl">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
                                 <div>
                                     <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Your
                                         Name</label>
                                     <input type="text" name="name" id="name" required
-                                        class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent"
+                                        class="w-full px-4 py-3 rounded-xl bg-darkBg/90 border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent transition-colors"
                                         placeholder="John Doe">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Your
                                         Email</label>
                                     <input type="email" name="email" id="email" required
-                                        class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent"
+                                        class="w-full px-4 py-3 rounded-xl bg-darkBg/90 border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent transition-colors"
                                         placeholder="john@example.com">
                                 </div>
                             </div>
@@ -410,18 +512,18 @@
                                 <label
                                     class="block text-xs font-semibold text-secondaryText uppercase mb-2">Subject</label>
                                 <input type="text" name="subject" id="subject" required
-                                    class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent"
+                                    class="w-full px-4 py-3 rounded-xl bg-darkBg/90 border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent transition-colors"
                                     placeholder="Project Collaboration">
                             </div>
                             <div>
                                 <label
                                     class="block text-xs font-semibold text-secondaryText uppercase mb-2">Message</label>
                                 <textarea name="message" id="message" rows="5" required
-                                    class="w-full px-4 py-3 rounded-xl bg-darkBg border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent resize-none"
+                                    class="w-full px-4 py-3 rounded-xl bg-darkBg/90 border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent resize-none transition-colors"
                                     placeholder="Write your message here..."></textarea>
                             </div>
                             <button type="submit" id="submit-btn"
-                                class="w-full py-4 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-bold shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-all flex items-center justify-center gap-2">
+                                class="w-full py-4 rounded-xl bg-gradient-to-r from-primaryAccent to-secondaryAccent text-white font-bold shadow-lg shadow-primaryAccent/25 hover:opacity-95 transition-opacity flex items-center justify-center gap-2">
                                 <span>Send Message</span>
                                 <i data-lucide="send" class="w-4 h-4"></i>
                             </button>
@@ -433,28 +535,48 @@
         </section>
     </main>
 
-    <footer class="bg-darkBg border-t border-slate-800/80 py-12">
+    <!-- Smooth Draggable Floating Music Controller (Responsive on All Devices) -->
+    <div id="floating-music-pill" title="Drag to move anywhere"
+        class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 max-w-[calc(100vw-2rem)] flex items-center gap-2.5 sm:gap-3 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-cardBg/90 backdrop-blur-xl border border-slate-800 shadow-2xl cursor-grab active:cursor-grabbing select-none touch-none">
+        <button type="button" data-music-toggle aria-label="Play or Pause Background Music"
+            class="music-toggle-btn w-9 h-9 rounded-xl bg-gradient-to-tr from-primaryAccent to-secondaryAccent text-white flex items-center justify-center shrink-0 shadow-md hover:opacity-95 transition-opacity cursor-pointer">
+            <i data-lucide="play" class="w-4 h-4 icon-play"></i>
+            <i data-lucide="square" class="w-3.5 h-3.5 icon-stop hidden"></i>
+        </button>
+        <div class="pr-1 min-w-0 max-w-[125px] sm:max-w-[140px]">
+            <p class="font-display font-bold text-xs text-primaryText truncate">Ako ang bagyoo!!!</p>
+            <p class="music-status-text text-[10px] text-secondaryText truncate">Paused • Click play</p>
+        </div>
+        <div class="music-eq flex items-end gap-0.5 h-4 pr-1 shrink-0" aria-hidden="true">
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+            <span class="eq-bar"></span>
+        </div>
+    </div>
+
+    <footer class="bg-darkBg/90 backdrop-blur-md border-t border-slate-800/80 py-12 relative z-10">
         <div
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
-                <span class="font-bold text-primaryText tracking-tight text-lg">HELLO.REIN</span>
+                <span class="font-display font-bold text-primaryText tracking-tight text-lg">HELLO.REIN</span>
+                <p class="text-sm text-secondaryText mt-1"></p>
                 <p class="text-xs text-secondaryText mt-1">© 2026 John Rein M. Pamplona. All rights reserved.</p>
             </div>
             <div class="flex items-center gap-4">
                 <a href="https://www.facebook.com/pamplona.johnrein" target="_blank" rel="noopener noreferrer"
-                    class="p-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent transition-all">
+                    class="p-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent transition-colors">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path
                             d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.002 10.125 11.854v-8.385H7.078v-3.469h3.047V9.429c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.93-1.956 1.885v2.24h3.328l-.532 3.469h-2.796v8.385C19.612 23.075 24 18.092 24 12.073z" />
                     </svg>
                 </a>
                 <a href="mailto:johnreinpamplona12@gmail.com"
-                    class="p-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent transition-all">
+                    class="p-2 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryAccent transition-colors">
                     <i data-lucide="mail" class="w-5 h-5"></i>
                 </a>
 
-                <a href="https://github.com/Pamplona-1"
-                    class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-all"
+                <a href="https://github.com/Pamplona-1" target="_blank" rel="noopener noreferrer"
+                    class="p-2.5 rounded-xl bg-cardBg border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-colors"
                     aria-label="Github">
                     <svg class="w-5 h-5" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
                         <path fill-rule="evenodd" clip-rule="evenodd"
