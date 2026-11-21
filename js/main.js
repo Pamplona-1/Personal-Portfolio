@@ -336,3 +336,4 @@ document.addEventListener('DOMContentLoaded', () => {
     window.addEventListener('load', updateScrollUI);
     updateScrollUI();
 });
+

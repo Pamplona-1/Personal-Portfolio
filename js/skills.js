@@ -13,7 +13,10 @@ const skillsData = [
     { name: "Node.js", category: "backend", icon: "hexagon", desc: "Backend runtime environment" },
     { name: "MySQL", category: "backend", icon: "database", desc: "Relational database management" },
     { name: "Figma", category: "tools", icon: "pen-tool", desc: "UI/UX wireframing & prototyping" },
+    { name: "Photoshop", category: "tools", icon: "image", desc: "Image editing & graphic design" },
+    { name: "Github", category: "tools", icon: "git-branch", desc: "Version control & collaboration" },
     { name: "VS Code", category: "tools", icon: "code-2", desc: "Primary code editor" },
+    { name: "Canva", category: "tools", icon: "layout-template", desc: "Graphic design & social media content" },
     { name: "Vite", category: "tools", icon: "zap", desc: "Next-gen frontend build tool" },
     { name: "Cisco Packet Tracer", category: "tools", icon: "network", desc: "Network topologies, OSPF & VLANs" }
 ];

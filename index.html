@@ -73,7 +73,7 @@
                 </div>
                 <div>
                     <span
-                        class="font-display font-bold text-lg tracking-tight bg-gradient-to-r from-white to-secondaryText bg-clip-text text-transparent">HELLO.REIN</span>
+                        class="font-display font-bold text-lg tracking-tight bg-gradient-to-r from-primaryText via-primaryAccent to-secondaryAccent dark:from-white dark:to-secondaryText bg-clip-text text-transparent">HELLO.REIN</span>
                     <span class="block text-xs text-primaryAccent font-medium">Personal Portfolio</span>
                 </div>
             </a>
@@ -98,7 +98,7 @@
                     <i data-lucide="arrow-right" class="w-4 h-4"></i>
                 </a>
                 <button id="mobile-menu-btn" aria-label="Open Menu"
-                    class="md:hidden p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-white transition-colors">
+                    class="md:hidden p-2.5 rounded-xl bg-cardBg border border-slate-800 text-secondaryText hover:text-primaryText dark:hover:text-white transition-colors">
                     <i data-lucide="menu" class="w-6 h-6"></i>
                 </button>
             </div>
@@ -123,13 +123,13 @@
     </header>
 
     <main class="overflow-hidden relative z-10">
-        <section id="hero" class="min-h-screen pt-24 lg:pt-28 pb-14 flex items-center relative">
+        <section id="hero" class="min-h-screen pt-32 lg:pt-28 pb-14 flex items-start lg:items-center relative">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full relative z-10">
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 items-center">
                     <div class="lg:col-span-7 space-y-4 text-center lg:text-left" data-aos="fade-right">
                         <div
                             class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-cardBg/80 backdrop-blur-md border border-primaryAccent/25 text-primaryAccent text-xs font-semibold tracking-wide shadow-lg shadow-primaryAccent/5">
-                            <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                            <span class="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                             Available for Opportunities & Collabs
                         </div>
                         <h1
@@ -148,7 +148,6 @@
                             interfaces, and resilient network architectures.
                         </p>
 
-                        <!-- Fully Responsive Home Music Card ("Ako ang bagyoo!!!") -->
                         <div
                             class="spotlight-card w-full max-w-lg mx-auto lg:mx-0 p-3.5 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800/90 shadow-lg flex flex-col sm:flex-row sm:items-center justify-between gap-3">
                             <!-- Top Row on Mobile / Left Side on Desktop -->
@@ -163,7 +162,7 @@
                                         <div class="flex items-center gap-1.5 flex-wrap">
                                             <span
                                                 class="text-[10px] font-bold uppercase tracking-wider text-secondaryAccent">Top
-                                                of my Playlist</span>
+                                                on my Playlist</span>
                                             <span
                                                 class="inline-flex items-center gap-1 px-1.5 py-0.5 rounded bg-primaryAccent/15 text-primaryAccent text-[10px] font-semibold">
                                                 <i data-lucide="repeat" class="w-2.5 h-2.5"></i> Loop
@@ -172,6 +171,9 @@
                                         <p
                                             class="font-display font-bold text-sm sm:text-base text-primaryText truncate">
                                             Ako ang bagyoo!!!
+                                        </p>
+                                        <p class="text-[12px] sm:text-[11px] text-secondaryText truncate">
+                                            by Shean
                                         </p>
                                         <p class="music-status-text text-[11px] text-secondaryText truncate">
                                             Paused • Click play to listen
@@ -196,7 +198,7 @@
                                     class="p-2 sm:p-1.5 rounded-lg bg-darkBg/80 border border-slate-800 text-secondaryText hover:text-primaryAccent transition-colors shrink-0">
                                     <i data-lucide="volume-2" class="w-4 h-4 sm:w-3.5 sm:h-3.5 icon-vol-on"></i>
                                     <i data-lucide="volume-x"
-                                        class="w-4 h-4 sm:w-3.5 sm:h-3.5 icon-vol-off hidden text-rose-400"></i>
+                                        class="w-4 h-4 sm:w-3.5 sm:h-3.5 icon-vol-off hidden text-rose-500"></i>
                                 </button>
                                 <input id="music-volume-slider" type="range" min="0" max="100" value="15"
                                     aria-label="Adjust Music Volume" class="music-range flex-1 sm:w-24 cursor-pointer">
@@ -219,15 +221,16 @@
                                 <span>Explore My Work</span>
                                 <i data-lucide="chevron-right" class="w-4 h-4"></i>
                             </a>
-                            <button id="download-resume-btn"
+                            <a id="download-resume-btn" href="assets/images/resume/Resume.pdf" target="_blank"
+                                rel="noopener noreferrer"
                                 class="px-6 py-3 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-700/80 text-primaryText font-semibold text-sm hover:border-primaryAccent hover:text-primaryAccent transition-colors flex items-center gap-2 shadow-sm">
                                 <i data-lucide="file-text" class="w-4 h-4"></i>
-                                <span>Download Resume</span>
-                            </button>
+                                <span>View / Download Resume</span>
+                            </a>
                         </div>
 
                         <div class="flex items-center justify-center lg:justify-start gap-3 pt-1 text-secondaryText">
-                            <span class="text-xs uppercase tracking-wider font-bold text-slate-500">Connect:</span>
+                            <span class="text-xs uppercase tracking-wider font-bold text-secondaryText">Connect:</span>
                             <a href="https://www.facebook.com/pamplona.johnrein" target="_blank"
                                 rel="noopener noreferrer"
                                 class="p-2 rounded-xl bg-cardBg/85 backdrop-blur-md border border-slate-800 hover:text-primaryAccent hover:border-primaryAccent transition-colors"
@@ -268,14 +271,13 @@
                                     class="w-full h-full object-cover object-center scale-105 -translate-y-1 group-hover:scale-110 transition-transform duration-500"
                                     onerror="this.src='https://images.unsplash.com/photo-1534528741775-53994a69daeb?q=80&w=600&auto=format&fit=crop'">
                                 <div
-                                    class="absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-darkBg/95 via-darkBg/50 to-transparent flex flex-col justify-end p-5 pointer-events-none">
+                                    class="profile-overlay-badge absolute inset-x-0 bottom-0 h-24 bg-gradient-to-t from-darkBg/95 via-darkBg/60 to-transparent flex flex-col justify-end p-5 pointer-events-none">
                                     <span
                                         class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-secondaryAccent mb-0.5">
                                         <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> BSIT • CCC
                                     </span>
-                                    <h3 class="text-white font-display font-bold text-lg leading-tight">John Rein M.
-                                        Pamplona</h3>
-                                    <p class="text-xs text-slate-300">Calamba City, Laguna</p>
+                                    <h3 class="font-display font-bold text-lg leading-tight">John Rein M. Pamplona</h3>
+                                    <p class="text-xs text-secondaryText">Calamba City, Laguna</p>
                                 </div>
                             </div>
                         </div>
@@ -297,26 +299,29 @@
                 <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
                     <div class="lg:col-span-6 space-y-6 text-secondaryText text-base sm:text-lg leading-relaxed"
                         data-aos="fade-right">
-                        <p>I am <strong class="text-primaryText font-semibold">John Rein M. Pamplona</strong>, currently
+                        <p>Hello! I am <strong class="text-primaryText font-semibold">John Rein M. Pamplona</strong>,
+                            currently
                             a third-year Bachelor of Science in Information Technology student at <span
                                 class="text-primaryText font-medium">City College of Calamba</span>.</p>
                         <p>My academic journey has equipped me with a solid foundation in software development
                             principles, database management, cybersecurity fundamentals, networking fundamentals,
-                            artificial intelligence concepts, and modern web architectures.</p>
+                            using artificial intelligence, and modern web architectures.</p>
                         <p>Beyond writing code, I enjoy designing user-friendly interfaces, solving technical problems,
-                            experimenting with new tools, and continuously improving my programming and networking
+                            experimenting with new tools, building using AI, and continuously improving my programming
                             abilities.</p>
                     </div>
                     <div class="lg:col-span-6 space-y-6" data-aos="fade-left">
                         <div
                             class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative overflow-hidden">
-                            <blockquote class="relative z-10 text-slate-300 italic text-lg sm:text-xl leading-relaxed">
-                                "I believe that technology is more than just writing code. It's about transforming ideas
-                                into meaningful experiences and creating solutions that make people's lives easier."
+                            <blockquote
+                                class="relative z-10 text-primaryText/90 dark:text-slate-300 italic text-lg sm:text-xl leading-relaxed">
+                                "I believe that AI is not a cheat code. It is a tool that bridges the gap between
+                                imagination and execution when paired with solid fundamentals and critical
+                                thinking."
                             </blockquote>
                             <div class="mt-6 flex items-center gap-4 relative z-10">
                                 <div
-                                    class="w-12 h-12 rounded-full bg-primaryAccent/20 flex items-center justify-center text-primaryAccent font-bold">
+                                    class="w-12 h-12 rounded-full bg-primaryAccent/15 text-primaryAccent flex items-center justify-center font-bold">
                                     JR</div>
                                 <div>
                                     <h4 class="text-primaryText font-bold text-sm">John Rein M. Pamplona</h4>
@@ -344,16 +349,16 @@
                         class="skill-filter-btn px-5 py-2 rounded-xl bg-primaryAccent text-white text-sm font-semibold shadow-lg shadow-primaryAccent/20 transition-all"
                         data-filter="all">All Skills</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-primaryText dark:hover:text-white text-sm font-semibold transition-all"
                         data-filter="languages">Languages</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-primaryText dark:hover:text-white text-sm font-semibold transition-all"
                         data-filter="frontend">Frontend</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-primaryText dark:hover:text-white text-sm font-semibold transition-all"
                         data-filter="backend">Backend & DB</button>
                     <button
-                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-white text-sm font-semibold transition-all"
+                        class="skill-filter-btn px-5 py-2 rounded-xl bg-cardBg/85 border border-slate-800 text-secondaryText hover:text-primaryText dark:hover:text-white text-sm font-semibold transition-all"
                         data-filter="tools">Tools & Networking</button>
                 </div>
                 <div id="skills-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"></div>
@@ -388,53 +393,120 @@
             </div>
         </section>
 
-        <section id="education" class="py-24 bg-cardBg/30 backdrop-blur-sm border-y border-slate-800/60">
+        <section id="education" class="py-20 bg-cardBg/30 backdrop-blur-sm border-y border-slate-800/60">
             <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-                <div class="text-center max-w-3xl mx-auto mb-16" data-aos="fade-up">
-                    <span class="text-primaryAccent font-semibold text-sm uppercase tracking-wider">Academic
+                <div class="text-center max-w-2xl mx-auto mb-12" data-aos="fade-up">
+                    <span class="text-primaryAccent font-semibold text-xs uppercase tracking-widest">Academic
                         Background</span>
-                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-2">Education</h2>
+                    <h2 class="font-display text-3xl sm:text-4xl font-bold text-primaryText mt-1.5">Education</h2>
                     <div
-                        class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-4 rounded-full">
+                        class="w-16 h-1 bg-gradient-to-r from-primaryAccent to-secondaryAccent mx-auto mt-3.5 rounded-full">
                     </div>
                 </div>
-                <div class="max-w-3xl mx-auto">
+
+                <div class="max-w-5xl mx-auto grid grid-cols-1 md:grid-cols-2 gap-5" data-aos="fade-up">
+                    <!-- College -->
                     <div
-                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative">
-                        <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">College
-                            (3rd Year - Present)</span>
-                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">City College of Calamba</h3>
-                        <h4 class="text-lg font-medium text-secondaryText mt-1">Bachelor of Science in Information
-                            Technology</h4>
-                        <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
+                        class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-lg flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span
+                                    class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-primaryAccent">
+                                    <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+                                    College • 3rd Year - Present
+                                </span>
+                                <span
+                                    class="px-2.5 py-0.5 rounded-full text-[11px] font-semibold bg-primaryAccent/10 text-primaryAccent">
+                                    Current
+                                </span>
+                            </div>
+                            <h3 class="font-display text-lg sm:text-xl font-bold text-primaryText leading-snug">
+                                City College of Calamba
+                            </h3>
+                            <p class="text-sm font-medium text-secondaryText mt-1">
+                                Bachelor of Science in Information Technology
+                            </p>
+                        </div>
+                        <p
+                            class="text-xs text-secondaryText flex items-center gap-1.5 pt-2 border-t border-slate-800/60">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-primaryAccent shrink-0"></i>
+                            <span>Calamba City, Laguna, Philippines</span>
+                        </p>
                     </div>
 
+                    <!-- Senior High School -->
                     <div
-                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative mt-8">
-                        <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Senior High
-                            School (2022 - 2024)</span>
-                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">Saint Benilde International
-                            School</h3>
-                        <h4 class="text-lg font-medium text-secondaryText mt-1">Accountancy and Business Management
-                            Strand</h4>
-                        <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
+                        class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-lg flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span
+                                    class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-secondaryAccent">
+                                    <span class="w-2 h-2 rounded-full bg-secondaryAccent"></span>
+                                    Senior High School • 2022 - 2024
+                                </span>
+                            </div>
+                            <h3 class="font-display text-lg sm:text-xl font-bold text-primaryText leading-snug">
+                                Saint Benilde International School
+                            </h3>
+                            <p class="text-sm font-medium text-secondaryText mt-1">
+                                Accountancy and Business Management Strand
+                            </p>
+                        </div>
+                        <p
+                            class="text-xs text-secondaryText flex items-center gap-1.5 pt-2 border-t border-slate-800/60">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-secondaryAccent shrink-0"></i>
+                            <span>Calamba City, Laguna, Philippines</span>
+                        </p>
                     </div>
 
+                    <!-- Junior High School -->
                     <div
-                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative mt-8">
-                        <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Junior High
-                            School (2018 - 2022)</span>
-                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">Maranatha Christian Academy
-                        </h3>
-                        <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
+                        class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-lg flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span
+                                    class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-highlight">
+                                    <span class="w-2 h-2 rounded-full bg-highlight"></span>
+                                    Junior High School • 2018 - 2022
+                                </span>
+                            </div>
+                            <h3 class="font-display text-lg sm:text-xl font-bold text-primaryText leading-snug">
+                                Maranatha Christian Academy
+                            </h3>
+                            <p class="text-sm font-medium text-secondaryText mt-1">
+                                Secondary Education
+                            </p>
+                        </div>
+                        <p
+                            class="text-xs text-secondaryText flex items-center gap-1.5 pt-2 border-t border-slate-800/60">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-highlight shrink-0"></i>
+                            <span>Calamba City, Laguna, Philippines</span>
+                        </p>
                     </div>
 
+                    <!-- Elementary School -->
                     <div
-                        class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-xl relative mt-8">
-                        <span class="text-xs uppercase tracking-wider font-semibold text-primaryAccent">Elementary
-                            School (2012 - 2018)</span>
-                        <h3 class="font-display text-2xl font-bold text-primaryText mt-1">La Mesa Elementary School</h3>
-                        <p class="text-sm text-slate-400 mt-1">Calamba City, Laguna, Philippines</p>
+                        class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 shadow-lg flex flex-col justify-between gap-3">
+                        <div>
+                            <div class="flex items-center justify-between gap-2 mb-2">
+                                <span
+                                    class="inline-flex items-center gap-1.5 text-[11px] font-semibold uppercase tracking-wider text-primaryAccent">
+                                    <span class="w-2 h-2 rounded-full bg-primaryAccent"></span>
+                                    Elementary School • 2012 - 2018
+                                </span>
+                            </div>
+                            <h3 class="font-display text-lg sm:text-xl font-bold text-primaryText leading-snug">
+                                La Mesa Elementary School
+                            </h3>
+                            <p class="text-sm font-medium text-secondaryText mt-1">
+                                Primary Education
+                            </p>
+                        </div>
+                        <p
+                            class="text-xs text-secondaryText flex items-center gap-1.5 pt-2 border-t border-slate-800/60">
+                            <i data-lucide="map-pin" class="w-3.5 h-3.5 text-primaryAccent shrink-0"></i>
+                            <span>Calamba City, Laguna, Philippines</span>
+                        </p>
                     </div>
                 </div>
             </div>
@@ -455,12 +527,34 @@
                             class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 flex items-center gap-4">
                             <div
                                 class="w-12 h-12 rounded-xl bg-primaryAccent/10 text-primaryAccent flex items-center justify-center font-bold shrink-0">
-                                <i data-lucide="mail" class="w-6 h-6"></i>
+                                <svg class="w-6 h-6" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                                    <path
+                                        d="M24 12.073C24 5.405 18.627 0 12 0S0 5.405 0 12.073c0 6.019 4.388 11.002 10.125 11.854v-8.385H7.078v-3.469h3.047V9.429c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953h-1.513c-1.491 0-1.956.93-1.956 1.885v2.24h3.328l-.532 3.469h-2.796v8.385C19.612 23.075 24 18.092 24 12.073z" />
+                                </svg>
                             </div>
                             <div class="min-w-0">
-                                <span class="text-xs text-secondaryText font-medium">Email Me</span>
+                                <span class="text-xs text-secondaryText font-medium">Connect on Facebook</span>
+                                <a href="https://www.facebook.com/pamplona.johnrein" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="block text-primaryText font-bold hover:text-primaryAccent transition-colors truncate">JohnRein
+                                    Pamplona</a>
+                                <a href="https://www.facebook.com/pamplona.johnrein" target="_blank"
+                                    rel="noopener noreferrer"
+                                    class="block text-xs text-primaryAccent font-medium hover:text-secondaryAccent transition-colors truncate">
+                                    view profile</a>
+                            </div>
+                        </div>
+
+                        <div
+                            class="spotlight-card p-6 rounded-2xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 flex items-center gap-4">
+                            <div
+                                class="w-12 h-12 rounded-xl bg-secondaryAccent/10 text-secondaryAccent flex items-center justify-center font-bold shrink-0">
+                                <i data-lucide="mail" class="w-6 h-6"></i>
+                            </div>
+                            <div>
+                                <span class="text-xs text-secondaryText font-medium">Email</span>
                                 <a href="mailto:johnreinpamplona12@gmail.com"
-                                    class="block text-primaryText font-bold hover:text-primaryAccent transition-colors truncate">johnreinpamplona12@gmail.com</a>
+                                    class="block text-primaryText font-bold hover:text-primaryAccent transition-colors">johnreinpamplona12@gmail.com</a>
                             </div>
                         </div>
 
@@ -493,12 +587,15 @@
                         <form id="contact-form" action="https://formspree.io/f/xbgoobpw" method="POST"
                             class="spotlight-card p-8 rounded-3xl bg-cardBg/85 backdrop-blur-xl border border-slate-800 space-y-6 shadow-xl">
                             <div class="grid grid-cols-1 sm:grid-cols-2 gap-6">
+                                <h1 class="text-lg sm:text-xl font-bold text-primaryText col-span-full">Send me an
+                                    Email
+                                </h1>
                                 <div>
                                     <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Your
                                         Name</label>
                                     <input type="text" name="name" id="name" required
                                         class="w-full px-4 py-3 rounded-xl bg-darkBg/90 border border-slate-800 text-primaryText focus:outline-none focus:border-primaryAccent transition-colors"
-                                        placeholder="John Doe">
+                                        placeholder="John Rein">
                                 </div>
                                 <div>
                                     <label class="block text-xs font-semibold text-secondaryText uppercase mb-2">Your
@@ -535,7 +632,6 @@
         </section>
     </main>
 
-    <!-- Smooth Draggable Floating Music Controller (Responsive on All Devices) -->
     <div id="floating-music-pill" title="Drag to move anywhere"
         class="fixed bottom-4 right-4 sm:bottom-5 sm:right-5 z-40 max-w-[calc(100vw-2rem)] flex items-center gap-2.5 sm:gap-3 px-3 py-2 sm:px-3.5 sm:py-2.5 rounded-2xl bg-cardBg/90 backdrop-blur-xl border border-slate-800 shadow-2xl cursor-grab active:cursor-grabbing select-none touch-none">
         <button type="button" data-music-toggle aria-label="Play or Pause Background Music"
@@ -559,7 +655,8 @@
             class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row items-center justify-between gap-6 text-center sm:text-left">
             <div>
                 <span class="font-display font-bold text-primaryText tracking-tight text-lg">HELLO.REIN</span>
-                <p class="text-sm text-secondaryText mt-1"></p>
+                <p class="text-xs text-secondaryText mt-1">
+                    Put together with code, coffee & AI · Still figuring things out, having fun doing it.</p>
                 <p class="text-xs text-secondaryText mt-1">© 2026 John Rein M. Pamplona. All rights reserved.</p>
             </div>
             <div class="flex items-center gap-4">

@@ -1,13 +1,19 @@
 document.addEventListener('DOMContentLoaded', () => {
     const resumeBtn = document.getElementById('download-resume-btn');
     if (!resumeBtn) return;
-    resumeBtn.addEventListener('click', () => {
-        const resumeUrl = 'assets/images/resume/Resume.pdf';
-        const link = document.createElement('a');
-        link.href = resumeUrl;
-        link.download = 'Resume';
-        document.body.appendChild(link);
-        link.click();
-        document.body.removeChild(link);
+
+    const resumeUrl = 'assets/images/resume/Resume.pdf';
+
+    if (resumeBtn.tagName === 'A') {
+        resumeBtn.href = resumeUrl;
+        resumeBtn.target = '_blank';
+        resumeBtn.rel = 'noopener noreferrer';
+    }
+
+    resumeBtn.addEventListener('click', (e) => {
+        if (resumeBtn.tagName !== 'A') {
+            e.preventDefault();
+            window.open(resumeUrl, '_blank', 'noopener,noreferrer');
+        }
     });
 });
