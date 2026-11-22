@@ -424,6 +424,38 @@ html:not(.dark) #music-volume-label {
   font-weight: 700;
 }
 
+/* Arctic Aurora Light Mode – Project Titles, Hero & About Readability Fix */
+html:not(.dark) #projects-grid h3,
+html:not(.dark) #projects-grid [class*="title"],
+html:not(.dark) #projects-grid .project-title {
+  color: #17233C !important;
+  -webkit-text-fill-color: #17233C !important;
+  background: none !important;
+  opacity: 1 !important;
+}
+
+html:not(.dark) #hero p,
+html:not(.dark) #hero #typed-text,
+html:not(.dark) #about p,
+html:not(.dark) #about blockquote {
+  color: #1E293B !important;
+  opacity: 1 !important;
+}
+
+html:not(.dark) #about strong,
+html:not(.dark) #about .font-medium {
+  color: #0F172A !important;
+}
+
+html:not(.dark) #hero h1 span {
+  -webkit-text-fill-color: transparent;
+}
+
+html:not(.dark) .about-quote-bg-img {
+  opacity: 0.45 !important;
+  filter: contrast(1.05) saturate(1.08);
+}
+
 /* Custom Cursor  */
 @media (hover: hover) and (pointer: fine) {
 
