@@ -7,7 +7,7 @@ document.addEventListener('DOMContentLoaded', () => {
         "Frontend Developer",
         "Web Developer",
         "Aspiring Network Engineer",
-        "Game Developer"
+        "Aspiring Game Developer"
     ];
 
     let wordIndex = 0;

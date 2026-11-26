@@ -391,7 +391,6 @@ main>section:not(#hero)>div>div:first-child {
   transform: translateX(4px);
 }
 
-/* Arctic Aurora Light Mode – Music Player Controls Polish */
 html:not(.dark) #music-mute-btn {
   background-color: #EDF2FA !important;
   color: #17233C !important;
@@ -424,7 +423,6 @@ html:not(.dark) #music-volume-label {
   font-weight: 700;
 }
 
-/* Arctic Aurora Light Mode – Project Titles, Hero & About Readability Fix */
 html:not(.dark) #projects-grid h3,
 html:not(.dark) #projects-grid [class*="title"],
 html:not(.dark) #projects-grid .project-title {
@@ -456,7 +454,94 @@ html:not(.dark) .about-quote-bg-img {
   filter: contrast(1.05) saturate(1.08);
 }
 
-/* Custom Cursor  */
+.mobile-link.active {
+  color: #3B82F6 !important;
+  font-weight: 700;
+  padding-left: 0.75rem;
+  border-left: 3px solid #3B82F6;
+  background: rgba(59, 130, 246, 0.08);
+  border-radius: 0.5rem;
+}
+
+html:not(.dark) .mobile-link.active {
+  color: #2563EB !important;
+  border-left-color: #2563EB;
+  background: rgba(37, 99, 235, 0.08);
+}
+
+html:not(.dark) .spotlight-card,
+html:not(.dark) #projects-grid>div,
+html:not(.dark) #certificates-container .rounded-2xl,
+html:not(.dark) #certificates-container .rounded-3xl {
+  transition: transform 0.24s ease, border-color 0.24s ease, box-shadow 0.24s ease, background-color 0.24s ease;
+}
+
+html:not(.dark) .spotlight-card:hover,
+html:not(.dark) #projects-grid>div:hover,
+html:not(.dark) #certificates-container .rounded-2xl:hover,
+html:not(.dark) #certificates-container .rounded-3xl:hover {
+  transform: translateY(-3px);
+  background-color: rgba(255, 255, 255, 0.96);
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08), 0 4px 12px rgba(59, 130, 246, 0.1);
+}
+
+html:not(.dark) .tech-skill-pill {
+  background-color: rgba(255, 255, 255, 0.92);
+  border-color: rgba(148, 163, 184, 0.35);
+  box-shadow: 0 2px 8px rgba(15, 23, 42, 0.04);
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+html:not(.dark) .tech-skill-pill:hover {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.65);
+  box-shadow: 0 8px 18px rgba(59, 130, 246, 0.14);
+}
+
+html:not(.dark) .tech-category-box:hover {
+  border-color: rgba(59, 130, 246, 0.55);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+}
+
+html:not(.dark) .soft-skill-card {
+  background-color: rgba(255, 255, 255, 0.88);
+  border-color: rgba(148, 163, 184, 0.35);
+  transition: transform 0.22s ease, border-color 0.22s ease, box-shadow 0.22s ease, background-color 0.22s ease;
+}
+
+html:not(.dark) .soft-skill-card:hover {
+  transform: translateY(-3px);
+  background-color: #ffffff;
+  border-color: rgba(6, 182, 212, 0.65);
+  box-shadow: 0 12px 24px rgba(6, 182, 212, 0.14);
+}
+
+html:not(.dark) header a.p-2,
+html:not(.dark) header button,
+html:not(.dark) #hero a.p-2,
+html:not(.dark) footer a {
+  transition: transform 0.2s ease, border-color 0.2s ease, box-shadow 0.2s ease, color 0.2s ease, background-color 0.2s ease;
+}
+
+html:not(.dark) header a.p-2:hover,
+html:not(.dark) header button:hover,
+html:not(.dark) #hero a.p-2:hover,
+html:not(.dark) footer a:hover {
+  transform: translateY(-2px);
+  background-color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.6);
+  box-shadow: 0 6px 16px rgba(59, 130, 246, 0.14);
+}
+
+html:not(.dark) #contact-form input:hover,
+html:not(.dark) #contact-form textarea:hover {
+  border-color: rgba(59, 130, 246, 0.5);
+  background-color: #ffffff;
+}
+
+/* Custom Cursor */
 @media (hover: hover) and (pointer: fine) {
 
   html.dark,
