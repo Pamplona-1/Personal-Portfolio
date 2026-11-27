@@ -119,3 +119,283 @@
     animation: none !important;
   }
 }
+
+/* Layout Builder Cursors Intro Animation */
+.intro-block {
+  opacity: 0.45;
+  transform: translate(18px, 14px) scale(0.95);
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.5s ease, border-color 0.4s ease;
+}
+
+#layout-builder-intro.is-arranging .intro-block-hero {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition-delay: 0.35s;
+}
+
+#layout-builder-intro.is-arranging .intro-block-a {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition-delay: 0.65s;
+}
+
+#layout-builder-intro.is-arranging .intro-block-b {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition-delay: 0.95s;
+}
+
+#layout-builder-intro.is-arranging .intro-block-c {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition-delay: 1.25s;
+}
+
+#layout-builder-intro.is-arranging .intro-block-footer {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+  transition-delay: 1.5s;
+}
+
+.builder-cursor {
+  position: absolute;
+  top: 12%;
+  left: 12%;
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  pointer-events: none;
+  z-index: 10;
+  opacity: 0;
+}
+
+.builder-cursor .cursor-tag {
+  font-size: 10px;
+  font-weight: 700;
+  padding: 2px 6px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.9);
+  color: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+}
+
+html:not(.dark) .builder-cursor .cursor-tag {
+  background: rgba(255, 255, 255, 0.95);
+  color: #0f172a;
+}
+
+#layout-builder-intro.is-arranging .cursor-1 {
+  animation: moveCursorOne 2.1s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+#layout-builder-intro.is-arranging .cursor-2 {
+  animation: moveCursorTwo 2.1s cubic-bezier(0.22, 1, 0.36, 1) 0.25s forwards;
+}
+
+#layout-builder-intro.is-arranging .cursor-3 {
+  animation: moveCursorThree 2.1s cubic-bezier(0.22, 1, 0.36, 1) 0.45s forwards;
+}
+
+@keyframes moveCursorOne {
+  0% {
+    opacity: 0;
+    transform: translate(10px, 20px) scale(0.95);
+  }
+
+  15% {
+    opacity: 1;
+  }
+
+  45% {
+    transform: translate(135px, 26px) scale(0.9);
+  }
+
+  75% {
+    transform: translate(220px, 22px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(250px, 35px) scale(0.9);
+  }
+}
+
+@keyframes moveCursorTwo {
+  0% {
+    opacity: 0;
+    transform: translate(260px, 190px) scale(0.95);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  50% {
+    transform: translate(175px, 115px) scale(0.88);
+  }
+
+  80% {
+    transform: translate(195px, 130px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(210px, 145px) scale(0.9);
+  }
+}
+
+@keyframes moveCursorThree {
+  0% {
+    opacity: 0;
+    transform: translate(40px, 210px) scale(0.95);
+  }
+
+  20% {
+    opacity: 1;
+  }
+
+  55% {
+    transform: translate(75px, 120px) scale(0.88);
+  }
+
+  85% {
+    transform: translate(110px, 215px) scale(1);
+  }
+
+  100% {
+    opacity: 0;
+    transform: translate(140px, 220px) scale(0.9);
+  }
+}
+
+#layout-builder-intro.is-done {
+  opacity: 0;
+  pointer-events: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  #layout-builder-intro {
+    display: none !important;
+  }
+}
+
+/* ==========================================================================
+   Live Portfolio Layout Agents (Real Elements Adjusted by Cursors)
+   ========================================================================== */
+
+.layout-agent-target {
+  will-change: transform, opacity;
+  transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.45s ease;
+}
+
+/* Initial shifted states before cursor agents snap them into place */
+body.is-layout-building .layout-agent-target[data-agent-offset="left"] {
+  transform: translate3d(-28px, 12px, 0);
+}
+
+body.is-layout-building .layout-agent-target[data-agent-offset="right"] {
+  transform: translate3d(28px, 12px, 0);
+}
+
+body.is-layout-building .layout-agent-target[data-agent-offset="up"] {
+  transform: translate3d(0, 26px, 0);
+}
+
+/* Settled state once arranged */
+body.layout-built .layout-agent-target {
+  transform: translate3d(0, 0, 0);
+}
+
+/* Floating Cursor Agent */
+.portfolio-cursor-agent {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 60;
+  pointer-events: none;
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  transform: translate3d(-120px, -120px, 0);
+  transition: transform 0.62s cubic-bezier(0.22, 1, 0.36, 1), opacity 0.35s ease;
+  will-change: transform, opacity;
+}
+
+.portfolio-cursor-agent .agent-pointer-wrap {
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Exit / Vanish Burst Ring Effect */
+.portfolio-cursor-agent .agent-vanish-ring {
+  position: absolute;
+  width: 24px;
+  height: 24px;
+  border-radius: 9999px;
+  border: 2px solid currentColor;
+  opacity: 0;
+  transform: scale(0.4);
+  pointer-events: none;
+}
+
+.portfolio-cursor-agent.is-snapping .agent-pointer {
+  transform: scale(0.84) rotate(-8deg);
+  transition: transform 0.16s ease;
+}
+
+.portfolio-cursor-agent .agent-pointer {
+  transition: transform 0.2s ease;
+  filter: drop-shadow(0 6px 14px rgba(15, 23, 42, 0.35));
+}
+
+.portfolio-cursor-agent .agent-badge {
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 2px 7px;
+  border-radius: 9999px;
+  background: rgba(15, 23, 42, 0.92);
+  color: #f8fafc;
+  border: 1px solid rgba(148, 163, 184, 0.35);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+html:not(.dark) .portfolio-cursor-agent .agent-badge {
+  background: rgba(255, 255, 255, 0.96);
+  color: #0f172a;
+  border-color: rgba(59, 130, 246, 0.35);
+}
+
+/* Vanish animation with pop + ring effect */
+.portfolio-cursor-agent.is-vanishing {
+  opacity: 0;
+  transform: var(--cursor-final-pos, translate3d(0, 0, 0)) scale(1.25);
+}
+
+.portfolio-cursor-agent.is-vanishing .agent-vanish-ring {
+  animation: cursorVanishBurst 0.48s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+@keyframes cursorVanishBurst {
+  0% {
+    opacity: 0.9;
+    transform: scale(0.5);
+  }
+
+  100% {
+    opacity: 0;
+    transform: scale(2.1);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .portfolio-cursor-agent {
+    display: none !important;
+  }
+
+  .layout-agent-target {
+    transform: none !important;
+  }
+}

@@ -46,6 +46,18 @@ const projectsData = [
         team: ["James Mathew Castillo", "Reynalyn Cornelio", "John Rein Pamplona", "Gellian Mae Ronquillo", "Mariella Taming", "Derick Tresvalles"],
         liveUrl: "https://tinyurl.com/escapar-shop",
         fullDetails: "Escapar is a mobile application prototype designed to streamline the ordering process for users, providing an intuitive interface for browsing products, customizing orders, and completing transactions efficiently. The design focuses on user experience, ensuring ease of navigation and accessibility."
+    },
+    {
+        id: "gaming-portfolio",
+        title: "Gaming Style Portfolio",
+        category: "Web Development",
+        desc: "A modern portfolio website inpired by Sword Art Online (SAO) anime series",
+        image: "assets/images/gaming-portfolio.png",
+        fallbackImage: "https://images.unsplash.com/photo-1550745263-3e3d52bd13e6?q=80&w=800&auto=format&fit=crop",
+        tags: ["HTML", "CSS", "JavaScript"],
+        team: ["John Rein M. Pamplona"],
+        liveUrl: "https://pamplona-sao-portfolio.vercel.app/",
+        fullDetails: "A visually striking portfolio website that draws inspiration from the Sword Art Online (SAO) anime series, featuring dynamic animations, interactive elements, and a gaming-inspired aesthetic to showcase personal projects and skills in a unique and engaging manner."
     }
 ];
 
